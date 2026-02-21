@@ -13,6 +13,7 @@ Run the app with Docker Compose:
 ```sh
 docker compose up --build
 ```
+and navigate to http://localhost:3000/
 
 ### Using the MySQL CLI inside the container
 
