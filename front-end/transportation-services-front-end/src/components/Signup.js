@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -22,7 +24,8 @@ const Signup = () => {
         password,
         role: "CUSTOMER"
       });
-      alert(response.data);
+        alert(response.data);
+        navigate("/", { replace: true }); // redirect to login route ("/" is the Login page)
     } catch (error) {
       alert(error.response?.data || "Something went wrong");
     }
